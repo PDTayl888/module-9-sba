@@ -32,13 +32,28 @@ export const TaskForm = ({ addTask }: TaskFormProps => {
 
             <div>
                 <label htmlFor="priority">PRIORITY</label>
-                <textarea 
-                    placeholder="priority level goes here..."
-                    value={description}
-                    onChange={() => setDescription()}
-                    type="text" 
+                <select 
+                    name="priority" 
+                    id="priority"
+                    value{priority}
+                    onChange={() => setPriority()}>
+                        <option value="low">LOW</option>
+                        <option value="medium">MEDIUM</option>
+                        <option value="high">HIGH</option>
+                    </select>
+            </div>
+
+            <div>
+                <label htmlFor="due date">DUE DATE</label>
+                <input 
+                    placeholder="choose due date"
+                    value={dueDate}
+                    onChange={() => setDueDate()}
+                    type="date" 
                 />
             </div>
+
+
 
 
 
