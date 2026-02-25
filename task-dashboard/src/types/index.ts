@@ -24,9 +24,15 @@ export interface TaskItemProps {
 }
 
 export interface TaskFilterProps {
+  filter: {
+    status: string;
+    priority: string;
+    search: string;
+  };
   onFilterChange: (filters: {
     status?: TaskStatus;
     priority?: 'low' | 'medium' | 'high';
+    search?: string;
   }) => void;
 }
 

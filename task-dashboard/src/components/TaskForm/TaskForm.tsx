@@ -10,10 +10,12 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
     const handleSubmit = (e: any) => {
         e.preventDefault();
 
+        if (!title.trim()) return;
+
         const newTask: Task = {
-            id: '',
-            title: '',
-            description: '',
+            id: Date.now().toString(),
+            title: title,
+            description: description,
             status: 'pending' as TaskStatus,
             priority: 'medium',
             dueDate: '',
@@ -34,7 +36,7 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
             action=""
             onSubmit={handleSubmit}>
 
-            <h2>TASK FORM</h2>
+            <p>TASK FORM</p>
 
             <div>
                 <label htmlFor="title">TITLE</label>

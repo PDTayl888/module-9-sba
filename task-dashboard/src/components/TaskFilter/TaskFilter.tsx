@@ -1,6 +1,6 @@
 import type { TaskFilterProps } from "../../types";
 
-export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
+export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
   return (
     <div
       style={{
@@ -11,6 +11,13 @@ export const TaskFilter = ({ onFilterChange }: TaskFilterProps) => {
         color: "white",
       }}
     >
+      <div>
+        <label>SEARCH</label>
+        <input type="text"
+        value={filter.search}
+        onChange={(e) => onFilterChange({ search: e.target.value})} />
+      </div>
+      
       <label>Status </label>
       <select
         name="status-filter"

@@ -1,10 +1,12 @@
 import "./App.css";
-import { Dashboard } from "./components/Dashboard/Dashboard"
+import { Dashboard } from "./components/Dashboard/Dashboard";
 
 function App() {
-  <div>
-    <Dashboard></Dashboard>
-  </div>
+  return (
+    <div style={{ backgroundColor: "red" }}>
+      <Dashboard></Dashboard>
+    </div>
+  );
 }
 
 export default App;

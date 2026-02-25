@@ -1,8 +1,8 @@
-import { useState } from "react";
+//import { useState } from "react";
 import type { Task } from "../types";
 
     
-//           const [tasks, setTasks] = useState<Task[]>([
+//               const task: Task[] = [
 //     {
 //       id: "67",
 //       title: "Do that thing",
@@ -43,7 +43,7 @@ import type { Task } from "../types";
 //       priority: "low",
 //       dueDate: "9-11-2001",
 //     },
-//   ]);
+//   ];
 
     
     
