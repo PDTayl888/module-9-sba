@@ -12,7 +12,7 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
       }}
     >
       <div>
-        <label>SEARCH</label>
+        <label>find</label>
         <input
           type="text"
           value={filter.search}
@@ -20,26 +20,26 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
         />
       </div>
 
-      <label>Status </label>
+      <label>lifecycle </label>
       <select
         name="status-filter"
         onChange={(e) => onFilterChange({ status: e.target.value as any })}
       >
-        <option value="all">All Statuses</option>
-        <option value="pending">Pending</option>
-        <option value="in-progress">In Progress</option>
-        <option value="completed">Completed</option>
+        <option value="all">all</option>
+        <option value="pending">seed</option>
+        <option value="in-progress">bloom</option>
+        <option value="completed">harvested</option>
       </select>
 
-      <label> Priority </label>
+      <label> which why </label>
       <select
         name="priority-filter"
         onChange={(e) => onFilterChange({ priority: e.target.value as any })}
       >
-        <option value="all">All Priorities</option>
-        <option value="high">High</option>
-        <option value="medium">Medium</option>
-        <option value="low">Low</option>
+        <option value="all">all</option>
+        <option value="high">crucial</option>
+        <option value="medium">helpful</option>
+        <option value="low">optional</option>
       </select>
     </div>
   );

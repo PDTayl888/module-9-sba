@@ -34,7 +34,7 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       <p>To-Do</p>
 
       <div>
-        <label htmlFor="title">title </label>
+        <label htmlFor="title">what </label>
         <input
           placeholder="title goes here..."
           value={title}
@@ -44,7 +44,7 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       </div>
 
       <div>
-        <label htmlFor="description">body </label>
+        <label htmlFor="description">how </label>
         <textarea
           placeholder="description goes here..."
           value={description}
@@ -53,16 +53,16 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       </div>
 
       <div>
-        <label htmlFor="priority">priority </label>
+        <label htmlFor="priority">why </label>
         <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="low">LOW</option>
-          <option value="medium">MEDIUM</option>
-          <option value="high">HIGH</option>
+          <option value="low">optional</option>
+          <option value="medium">helpful</option>
+          <option value="high">crucial</option>
         </select>
       </div>
 
       <div>
-        <label htmlFor="due-date">due </label>
+        <label htmlFor="due-date">when </label>
         <input
           placeholder="choose due date"
           value={dueDate}
@@ -71,7 +71,7 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
         />
       </div>
 
-      <button type="submit">+</button>
+      <button type="submit">go</button>
     </form>
   );
 };
