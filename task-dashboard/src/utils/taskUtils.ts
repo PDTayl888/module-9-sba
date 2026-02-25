@@ -1,7 +1,6 @@
 //import { useState } from "react";
 import type { Task } from "../types";
 
-    
 //               const task: Task[] = [
 //     {
 //       id: "67",
@@ -45,35 +44,27 @@ import type { Task } from "../types";
 //     },
 //   ];
 
-    
-    
-
-
-
 export const filteredTasks = (
-    tasks: Task[],
-    filters: {
-        status: string;
-        priority: string;
-        search: string
-    }) => {
-
-
-    return tasks
-        .filter((task) => filters.status === "all" || task.status === filters.status)
-        .filter(
-        (task) => filters.priority === "all" || task.priority === filters.priority,
-         )
-        .filter((task) => {
-            const searchTerm = filters.search.toLowerCase();
-                return(
-                    task.title.toLowerCase().includes(searchTerm) ||
-                    task.description.toLowerCase().includes(searchTerm)
-                )
-    })
-}
-
-
-
-
-    
+  tasks: Task[],
+  filters: {
+    status: string;
+    priority: string;
+    search: string;
+  },
+) => {
+  return tasks
+    .filter(
+      (task) => filters.status === "all" || task.status === filters.status,
+    )
+    .filter(
+      (task) =>
+        filters.priority === "all" || task.priority === filters.priority,
+    )
+    .filter((task) => {
+      const searchTerm = filters.search.toLowerCase();
+      return (
+        task.title.toLowerCase().includes(searchTerm) ||
+        task.description.toLowerCase().includes(searchTerm)
+      );
+    });
+};

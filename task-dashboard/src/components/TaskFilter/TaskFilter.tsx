@@ -13,11 +13,13 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
     >
       <div>
         <label>SEARCH</label>
-        <input type="text"
-        value={filter.search}
-        onChange={(e) => onFilterChange({ search: e.target.value})} />
+        <input
+          type="text"
+          value={filter.search}
+          onChange={(e) => onFilterChange({ search: e.target.value })}
+        />
       </div>
-      
+
       <label>Status </label>
       <select
         name="status-filter"
