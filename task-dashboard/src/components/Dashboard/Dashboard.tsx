@@ -35,9 +35,6 @@ export const Dashboard = () => {
     <>
     <h2>TASK DASHBOARD</h2>
     <TaskForm addTask={handleAddTask}></TaskForm>
-    <input placeholder="enter search here..." 
-            value={filter.search}
-            onChange={(e) => setFilter({ ...filter, search: e.target.value})}/>
       <TaskFilter
       filter={filter}
         onFilterChange={(newFilters: { status?: TaskStatus; priority?: Priority; search?: string}) => setFilter({ ...filter, ...newFilters })}
