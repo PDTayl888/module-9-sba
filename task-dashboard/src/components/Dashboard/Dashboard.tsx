@@ -1,8 +1,23 @@
+import { useState } from 'react';
 import { TaskForm } from './../TaskForm/TaskForm';
+import { TaskFilter } from './../TaskForm/TaskFilter';
+import { filteredTasks, FilteredTasks } from '../../utils/taskUtils';
+import { TaskList } from './../TaskList/TaskList';
+import type { Task, TaskStatus, Priority } from '../../types';
+
+
 
   
   
 export const Dashboard = () => {
+
+    const [tasks, setTasks] = useState<Task[]>(() => {
+        const saved = localStorage.getItem("tasks-array");
+        return saved ? JSON.parse(saved) : [];
+    })
+
+    const [filter, setFilter] = useState({ status: "all", priority: "all", search: "" });
+    const displayTasks = filteredTasks(tasks, filter)
 
     const handleAddTask = () => {
 
@@ -12,12 +27,16 @@ export const Dashboard = () => {
 
   return (
     <>
+    <h2>TASK DASHBOARD</h2>
     <TaskForm addTask={handleAddTask}></TaskForm>
+    <input placeholder="enter search here..." 
+            value={filter.search}
+            onChange={(e) => setFilter({ ...filter, search: e.target.value})}/>
       <TaskFilter
-        onFilterChange={(newStatus) => setFilter({ ...filter, ...newStatus })}
+        onFilterChange={(newFilters: { status?: TaskStatus; priority?: Priority; search?: string}) => setFilter({ ...filter, ...newFilters })}
       ></TaskFilter>
       <TaskList
-        tasks={filteredTasks}
+        tasks={displayTasks}
         onStatusChange={(taskId, newStatus) =>
           setTasks(
             tasks.map((task) =>

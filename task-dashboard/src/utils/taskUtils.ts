@@ -1,17 +1,33 @@
+import { useState } from "react";
+import type { Task } from "../types";
+
     
-import { Dashboard } from './../components/Dashboard/Dashboard';
+
     
     
 
 
-    const [filter, setFilter] = useState({ status: "all", priority: "all" });
 
-  const filteredTasks = tasks
-    .filter((task) => filter.status === "all" || task.status === filter.status)
-    .filter(
-      (task) => filter.priority === "all" || task.priority === filter.priority,
-    );
-
+export const filteredTasks = (
+    tasks: Task[],
+    filters: {
+        status: string;
+        priority: string;
+        search: string
+    }) => {
+    return tasks
+        .filter((task) => filters.status === "all" || task.status === filters.status)
+        .filter(
+        (task) => filters.priority === "all" || task.priority === filters.priority,
+         )
+        .filter((task) => {
+            const searchTerm = filters.search.toLowerCase();
+                return(
+                    task.title.toLowerCase().includes(searchTerm) ||
+                    task.description.toLowerCase().includes(searchTerm)
+                )
+    })
+}
 
   const [tasks, setTasks] = useState<Task[]>([
     {
