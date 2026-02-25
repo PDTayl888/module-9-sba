@@ -1,7 +1,8 @@
 //import type { Task, TaskStatus } from "../../types";
-import { TaskItem } from "../TaskItem/TaskItem";
+//import { TaskItem } from "../../TaskItem/TaskItem";
 
 import type { TaskListProps } from "../../types";
+import { TaskItem } from "./TaskItem";
 
 export const TaskList = ({
   tasks,
