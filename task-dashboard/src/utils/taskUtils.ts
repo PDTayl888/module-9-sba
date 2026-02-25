@@ -1,4 +1,10 @@
-const [filter, setFilter] = useState({ status: "all", priority: "all" });
+    
+import { Dashboard } from './../components/Dashboard/Dashboard';
+    
+    
+
+
+    const [filter, setFilter] = useState({ status: "all", priority: "all" });
 
   const filteredTasks = tasks
     .filter((task) => filter.status === "all" || task.status === filter.status)
@@ -50,3 +56,6 @@ const [filter, setFilter] = useState({ status: "all", priority: "all" });
     },
   ]);
 
+
+
+    

@@ -1,15 +1,18 @@
-import { useState } from "react";
-import type { Task } from "../../types";
+import { TaskForm } from './../TaskForm/TaskForm';
 
   
   
-export const Dashboard = ({ }) => {
+export const Dashboard = () => {
 
+    const handleAddTask = () => {
+
+    }
 
   
 
   return (
     <>
+    <TaskForm addTask={handleAddTask}></TaskForm>
       <TaskFilter
         onFilterChange={(newStatus) => setFilter({ ...filter, ...newStatus })}
       ></TaskFilter>
