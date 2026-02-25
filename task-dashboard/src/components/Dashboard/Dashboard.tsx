@@ -28,8 +28,14 @@ export const Dashboard = () => {
   //
 
   return (
-    <>
-      <h2>TASK DASHBOARD</h2>
+    <div style={{
+      backgroundColor: 'rgb(26, 163, 134)',
+      borderRadius: '10px'
+    }}>
+      <h2 style={{
+         fontWeight: 800,
+         fontSize: "2rem"
+      }}>TaskMaster 3000</h2>
       <TaskForm addTask={handleAddTask}></TaskForm>
       <TaskFilter
         filter={filter}
@@ -50,9 +56,11 @@ export const Dashboard = () => {
         }}
         onDelete={(id) => {
           console.log("delete task button");
-          setTasks(tasks.filter((t) => t.id !== id));
+          const updatedTasks = tasks.filter((t) => t.id !== id);
+          setTasks(updatedTasks);
+          localStorage.setItem("tasks-array", JSON.stringify(updatedTasks));
         }}
       ></TaskList>
-    </>
+    </div>
   );
 };

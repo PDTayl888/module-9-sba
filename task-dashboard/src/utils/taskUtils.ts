@@ -1,7 +1,7 @@
 //import { useState } from "react";
 import type { Task } from "../types";
 
-//               const task: Task[] = [
+//     const task: Task[] = [
 //     {
 //       id: "67",
 //       title: "Do that thing",
