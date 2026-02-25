@@ -1,12 +1,38 @@
-import type { Task } from "../../types"
+import { useState } from "react";
+import type { Task, TaskStatus, TaskFormProps } from "../../types"
 
-interface TaskFormProps {
-    addTask: (task: Task) => void;
-}
+export const TaskForm = ({ addTask }: TaskFormProps) => {
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [priority, setPriority] = useState("medium");
+    const [dueDate, setDueDate] = useState("");
 
-export const TaskForm = ({ addTask }: TaskFormProps => {
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+
+        const newTask: Task = {
+            id: '',
+            title: '',
+            description: '',
+            status: 'pending' as TaskStatus,
+            priority: 'medium',
+            dueDate: '',
+        }
+
+        addTask(newTask)
+
+        setTitle("");
+        setDescription("");
+        setPriority("medium");
+        setDueDate("");
+        
+    }
+
+
     return (
-        <form action="">
+        <form 
+            action=""
+            onSubmit={handleSubmit}>
 
             <h2>TASK FORM</h2>
 
@@ -15,7 +41,7 @@ export const TaskForm = ({ addTask }: TaskFormProps => {
                 <input 
                     placeholder="title goes here..."
                     value={title}
-                    onChange={() => setTitle()}
+                    onChange={(e) => setTitle(e.target.value)}
                     type="text" 
                 />
             </div>
@@ -25,18 +51,15 @@ export const TaskForm = ({ addTask }: TaskFormProps => {
                 <textarea 
                     placeholder="description goes here..."
                     value={description}
-                    onChange={() => setDescription()}
-                    type="text" 
+                    onChange={(e) => setDescription(e.target.value)} 
                 />
             </div>
 
             <div>
                 <label htmlFor="priority">PRIORITY</label>
                 <select 
-                    name="priority" 
-                    id="priority"
-                    value{priority}
-                    onChange={() => setPriority()}>
+                    value={priority}
+                    onChange={(e) => setPriority(e.target.value)}>
                         <option value="low">LOW</option>
                         <option value="medium">MEDIUM</option>
                         <option value="high">HIGH</option>
@@ -48,16 +71,15 @@ export const TaskForm = ({ addTask }: TaskFormProps => {
                 <input 
                     placeholder="choose due date"
                     value={dueDate}
-                    onChange={() => setDueDate()}
+                    onChange={(e) => setDueDate(e.target.value)}
                     type="date" 
                 />
             </div>
 
-
-
-
-
+            <button type="submit">ADD TASK</button>
 
         </form>
-    )
-})
+    );
+    
+
+}
