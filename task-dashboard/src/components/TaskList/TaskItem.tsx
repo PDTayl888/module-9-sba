@@ -30,9 +30,12 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
 
       <button
         style={{
-          borderRadius: "8px",
+          height: "38px",
+          borderRadius: "50%",
           marginLeft: "130px",
-          backgroundColor: "red",
+          fontWeight: "bold",
+          boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+          backgroundColor: "#ff4d4d",
         }}
         onClick={() => {
           console.log("X");

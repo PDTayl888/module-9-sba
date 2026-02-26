@@ -25,18 +25,31 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
 
     setTitle("");
     setDescription("");
-    setPriority("");
+    setPriority("optional");
     setDueDate("");
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
-      <p>seed</p>
+    <form
+      action=""
+      onSubmit={handleSubmit}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: "15px",
+        border: "1px solid rgba(255, 255, 255, 0.3)",
+        borderRadius: "12px",
+        padding: "20px",
+        backgroundColor: "rgba(58, 153, 129, 0.87)",
+        color: "white",
+      }}
+    >
+      <p>plant a seed</p>
 
       <div>
         <label htmlFor="title">what </label>
         <input
-          placeholder="title goes here..."
+          placeholder="you need to do..."
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           type="text"
@@ -46,7 +59,8 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       <div>
         <label htmlFor="description">how </label>
         <textarea
-          placeholder="description goes here..."
+          style={{ paddingTop: "30px" }}
+          placeholder="you will do it..."
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
@@ -71,7 +85,23 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
         />
       </div>
 
-      <button type="submit">go</button>
+      <button
+        type="submit"
+        style={{
+          marginTop: "10px",
+          padding: "12px 24px",
+          backgroundColor: "#ffffff",
+          color: "rgb(26, 163, 134)",
+          border: "none",
+          borderRadius: "50px",
+          fontWeight: "800",
+          fontSize: "1rem",
+          boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+          alignSelf: "center",
+        }}
+      >
+        GO
+      </button>
     </form>
   );
 };

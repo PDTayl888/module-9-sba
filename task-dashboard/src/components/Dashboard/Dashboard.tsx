@@ -28,16 +28,21 @@ export const Dashboard = () => {
   //
 
   return (
-    <div style={{
-      backgroundColor: 'rgb(26, 163, 134)',
-      borderRadius: '10px'
-    }}>
-      <h2 style={{
-         fontWeight: 800,
-         fontSize: "2rem"
-      }}>Cultivate</h2>
-      <h4>grow your life, one seed at a time
-      </h4>
+    <div
+      style={{
+        backgroundColor: "rgb(26, 163, 134)",
+        borderRadius: "10px",
+      }}
+    >
+      <h2
+        style={{
+          fontWeight: 800,
+          fontSize: "2rem",
+        }}
+      >
+        Cultivate
+      </h2>
+      <h4>grow your life, one seed at a time</h4>
       <TaskForm addTask={handleAddTask}></TaskForm>
       <TaskFilter
         filter={filter}
