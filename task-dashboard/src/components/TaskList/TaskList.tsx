@@ -17,7 +17,7 @@ export const TaskList = ({
           backgroundColor: "red",
         }}
       >
-        NO TASKS FOUND
+        NO SEEDS FOUND
       </h2>
     );
   }
