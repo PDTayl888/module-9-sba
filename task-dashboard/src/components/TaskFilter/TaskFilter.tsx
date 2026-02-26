@@ -26,9 +26,9 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
         onChange={(e) => onFilterChange({ status: e.target.value as any })}
       >
         <option value="all">all</option>
-        <option value="pending">seedling</option>
-        <option value="in-progress">bloom</option>
-        <option value="completed">harvested</option>
+        <option value="seedling">seedling</option>
+        <option value="bloom">bloom</option>
+        <option value="harvested">harvested</option>
       </select>
 
       <label> which why </label>
