@@ -7,7 +7,7 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
         border: "1px solid #fffffff",
         borderRadius: "12px",
         padding: "6px",
-        backgroundColor: "darkBlue",
+        backgroundColor: "rgba(58, 153, 129, 0.87)",
         color: "white",
       }}
     >
@@ -26,7 +26,7 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
         onChange={(e) => onFilterChange({ status: e.target.value as any })}
       >
         <option value="all">all</option>
-        <option value="pending">seed</option>
+        <option value="pending">seedling</option>
         <option value="in-progress">bloom</option>
         <option value="completed">harvested</option>
       </select>
@@ -37,10 +37,13 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
         onChange={(e) => onFilterChange({ priority: e.target.value as any })}
       >
         <option value="all">all</option>
-        <option value="high">crucial</option>
-        <option value="medium">helpful</option>
-        <option value="low">optional</option>
+        <option value="crucial">crucial</option>
+        <option value="helpful">helpful</option>
+        <option value="optional">optional</option>
       </select>
+      <hr />
+      <h3>daily harvest</h3>
+      <hr />
     </div>
   );
 };

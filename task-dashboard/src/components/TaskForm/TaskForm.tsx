@@ -4,7 +4,7 @@ import type { Task, TaskStatus, TaskFormProps, Priority } from "../../types";
 export const TaskForm = ({ addTask }: TaskFormProps) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [priority, setPriority] = useState("medium");
+  const [priority, setPriority] = useState("helpful");
   const [dueDate, setDueDate] = useState("");
 
   const handleSubmit = (e: any) => {
@@ -16,7 +16,7 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       id: Date.now().toString(),
       title: title,
       description: description,
-      status: "pending" as TaskStatus,
+      status: "bloom" as TaskStatus,
       priority: priority as Priority,
       dueDate: dueDate,
     };
@@ -25,13 +25,13 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
 
     setTitle("");
     setDescription("");
-    setPriority("medium");
+    setPriority("");
     setDueDate("");
   };
 
   return (
     <form action="" onSubmit={handleSubmit}>
-      <p>To-Do</p>
+      <p>seed</p>
 
       <div>
         <label htmlFor="title">what </label>
@@ -55,9 +55,9 @@ export const TaskForm = ({ addTask }: TaskFormProps) => {
       <div>
         <label htmlFor="priority">why </label>
         <select value={priority} onChange={(e) => setPriority(e.target.value)}>
-          <option value="low">optional</option>
-          <option value="medium">helpful</option>
-          <option value="high">crucial</option>
+          <option value="optional">optional</option>
+          <option value="helpful">helpful</option>
+          <option value="crucial">crucial</option>
         </select>
       </div>
 

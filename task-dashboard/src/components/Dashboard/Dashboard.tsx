@@ -35,7 +35,9 @@ export const Dashboard = () => {
       <h2 style={{
          fontWeight: 800,
          fontSize: "2rem"
-      }}>TaskMaster 3000</h2>
+      }}>Cultivate</h2>
+      <h4>grow your life, one seed at a time
+      </h4>
       <TaskForm addTask={handleAddTask}></TaskForm>
       <TaskFilter
         filter={filter}

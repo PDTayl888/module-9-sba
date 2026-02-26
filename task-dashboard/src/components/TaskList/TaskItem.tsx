@@ -5,15 +5,17 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
   return (
     <div
       style={{
-        border: "1px solid #fffffff",
-        borderRadius: "12px",
-        backgroundColor: "blue",
+        border: ".6px dotted white",
+        borderRadius: "5px",
+        padding: "6px",
+        backgroundColor: "rgba(58, 153, 129, 0.87)",
+        color: "white",
       }}
     >
       <h3>{task.title}</h3>
       <p>{task.description}</p>
-      <p>Priority: {task.priority}</p>
-      <p>Due: {task.dueDate}</p>
+      <p>why {task.priority}</p>
+      <p>when {task.dueDate}</p>
 
       <select
         name="status"
@@ -21,9 +23,9 @@ export const TaskItem = ({ task, onStatusChange, onDelete }: TaskItemProps) => {
         value={task.status}
         onChange={(e) => onStatusChange(task.id, e.target.value as TaskStatus)}
       >
-        <option value="pending">Pending</option>
-        <option value="in-progress">In Progress</option>
-        <option value="completed">completed</option>
+        <option value="seedling">seedling</option>
+        <option value="bloom">bloom</option>
+        <option value="harvested">harvested</option>
       </select>
 
       <button

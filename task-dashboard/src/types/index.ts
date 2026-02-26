@@ -1,5 +1,5 @@
-export type TaskStatus = "pending" | "in-progress" | "completed";
-export type Priority = "low" | "medium" | "high";
+export type TaskStatus = "seedling" | "bloom" | "harvested";
+export type Priority = "optional" | "helpful" | "crucial";
 
 //export type Priority =
 export interface Task {
