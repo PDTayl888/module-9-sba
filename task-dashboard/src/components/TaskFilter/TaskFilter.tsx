@@ -23,6 +23,7 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
       <label>lifecycle </label>
       <select
         name="status-filter"
+        value={filter.status}
         onChange={(e) => onFilterChange({ status: e.target.value as any })}
       >
         <option value="all">all</option>
@@ -34,6 +35,7 @@ export const TaskFilter = ({ filter, onFilterChange }: TaskFilterProps) => {
       <label> which why </label>
       <select
         name="priority-filter"
+        value={filter.priority}
         onChange={(e) => onFilterChange({ priority: e.target.value as any })}
       >
         <option value="all">all</option>
